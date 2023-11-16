@@ -5,6 +5,7 @@ local M = {}
 ---@class Palette
 M.default = {
   none = "NONE",
+  bg_darker = "#0b0a12",
   bg_dark = "#1f2335",
   bg = "#24283b",
   bg_highlight = "#292e42",
@@ -132,6 +133,7 @@ function M.setup(opts)
   -- Sidebar and Floats are configurable
   colors.bg_sidebar = config.options.styles.sidebars == "transparent" and colors.none
     or config.options.styles.sidebars == "dark" and colors.bg_dark
+    or config.options.styles.sidebars == "darker" and colors.bg_darker
     or colors.bg
 
   colors.bg_float = config.options.styles.floats == "transparent" and colors.none
